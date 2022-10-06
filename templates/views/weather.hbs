@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="/css/styles.css">
+        <link rel="icon" href="/img/weather.png">
+        <script src="/js/script.js"></script>
+    </head>
+
+    <body>
+        <div class="main-content">
+            {{>header}}
+            <p>Forecast: {{forecast}}</p>
+            <p>Location: {{location}}</p>
+            <p>Region: {{region}}</p>
+        </div>
+
+        {{>footer}}
+    </body>
+</html>
