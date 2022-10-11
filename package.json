@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node src/web-server.js"
+    "start": "node src/web-server.js",
+    "dev": "nodemon src/web-server.js -e js,hbs"
   },
   "keywords": [],
   "author": "",
@@ -13,5 +14,8 @@
     "express": "^4.18.1",
     "hbs": "^4.2.0",
     "postman-request": "^2.88.1-postman.31"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
   }
 }
