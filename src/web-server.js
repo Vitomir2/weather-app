@@ -29,7 +29,7 @@ app.get('', (req, res) => {
 app.get('/weather', (req, res) => {
     if (!req.query.location) {
         return res.send({
-            error: 'You must provide an address'
+            error: 'You must provide an location'
         });
     }
 
@@ -43,6 +43,9 @@ app.get('/weather', (req, res) => {
         let forecast = `It is currently ${current.temperature} degrees out. There is a ${current.precip}% chance of rain.`;
         console.log(forecast);
         
+        let windData = `The wind speed is ${current.wind_speed}, the wind degree is ${current.wind_degree} and the direction is ${current.wind_dir}.`;
+        console.log(windData);
+        
         geoTime(location.lat, location.lon, (error, observation_time) => {
           if (error) {
             return res.send({
@@ -53,7 +56,8 @@ app.get('/weather', (req, res) => {
             res.render('weather', {
                 forecast,
                 location: location.name,
-                region: location.region
+                region: location.region,
+                windData
             });
           }
         });
